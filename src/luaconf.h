@@ -39,6 +39,13 @@
 #define LUA_USE_READLINE	/* needs some extra libraries */
 #endif
 
+#if defined(LUA_USE_NDK)
+#define LUA_USE_POSIX
+#define LUA_USE_DLOPEN		/* needs an extra library: -ldl */
+#define LUA_DISABLE_LOG2
+#endif
+
+
 #if defined(LUA_USE_MACOSX)
 #define LUA_USE_POSIX
 #define LUA_DL_DYLD		/* does not need extra library */
